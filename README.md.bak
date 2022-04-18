@@ -31,16 +31,6 @@ else {
     print("Уравнение имеет два корня, x1=\(firstRoot), x2=\(secondRoot)")
 }
 
-Задание 2. Даны катеты прямоугольного треугольника. Найти площадь, периметр и гипотенузу треугольника.
+Задание 2
 
-var cathetusOne = 5 // переменная будет хранить значение первого катета
-var cathetusTwo = 8 // переменная будет хранить значение второго катета
-
-var S = (cathetusOne*cathetusTwo)*1/2 // результат вычисления площади треугольника записываем в переменную S
-print ("Площадь треугольника равна \(S)")
-
-var hypotenuse: Float = sqrt(Float(cathetusOne*cathetusOne)+Float(cathetusTwo*cathetusTwo)) // находим гипотенузу по теореме Пифагора
-print ("Гипотенуза треугольника равна \(hypotenuse)")
-
-var perimeter: Float = Float(cathetusOne+cathetusTwo)+(hypotenuse)// находим периметр треугольника
-print ("Периметр треугольника равен \(perimeter)")
+Домашнее задание №2
