@@ -101,5 +101,60 @@ print (number2)// выводим массив
 
 Задание 4. Удалить из этого массива все четные числа и все числа, которые не делятся на 3.
 
-Не удалось решить. Есть функции в задании 1 и 2, но не удалось их перестроить под массив, 
-а также пока не разобрался как перебирать массив и одновременно удалять необходимые элементы из массива.
+var numbers = Array(1...100) // создаем массив, можно как у вас, результат тот же
+
+for number in numbers { // итерируемся по массиву numbers
+if number % 2 == 0 { // проверяем что число четное, вместо проверки можно использовать прямо вашу функцию
+numbers.remove(at: numbers.firstIndex(of: number)!) // чтобы удалить конкретный элемент – функцией firstIndex(of:) мы ищем индекс нужного элемента, а функция remove(at:) удаляет элемент по этому индексу
+} else if number % 3 != 0 {
+numbers.remove(at: numbers.firstIndex(of: number)!)
+}
+}
+
+Домашнее задание №3
+1. Описать несколько структур – любой легковой автомобиль SportCar и любой грузовик TrunkCar.
+2. Структуры должны содержать марку авто, год выпуска, объем багажника/кузова, запущен ли двигатель, открыты ли окна, заполненный объем багажника.
+3. Описать перечисление с возможными действиями с автомобилем: запустить/заглушить двигатель, открыть/закрыть окна, погрузить/выгрузить из кузова/багажника груз определенного объема.
+4. Добавить в структуры метод с одним аргументом типа перечисления, который будет менять свойства структуры в зависимости от действия.
+5. Инициализировать несколько экземпляров структур. Применить к ним различные действия.
+6. Вывести значения свойств экземпляров в консоль.
+
+import Swift
+import Foundation
+
+struct sportCar { // создаем структуру и несколько полей с разными типами
+	let name: String
+	let made: Int
+	let trunkValue: Float
+	let trunkValueUsed: Int
+	var isEngineOn: Bool
+	var areWindowsOpen: Bool
+    
+    enum CarProperties {
+        case turnEngineOn 
+        case turnEngineOff
+        case openTheWindows
+        case closeTheWindows
+        }
+
+    //func changeMethod (CarProperties) {     // пока не разобрался как это работает
+    //} 
+}    	
+
+var carCondition: sportCar.CarProperties = .turnEngineOff // создаем экземпляр класса и присваиваем ему значение из перечисления
+
+switch carCondition { // набор случаев для состояния автомобиля
+    case .turnEngineOn:
+    print("Двигатель включен")
+    case .turnEngineOff:
+    print("Двигатель выключен")
+    case .openTheWindows: 
+    print ("Окна открыты")
+    case .closeTheWindows:
+    print("Окна закрыты")
+}
+
+let lamborghini = sportCar(name: "Lamborghini", made: 2021, trunkValue: 100.00, trunkValueUsed: 38, isEngineOn: false , areWindowsOpen: true) // инициализируем экземпляр структуры
+
+print (lamborghini) // распечатаем весь экземпляр структуры для проверки
+
